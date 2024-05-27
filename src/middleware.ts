@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
  
 let locales = ['en', 'pt'];
  
-export function middleware(request) {
+export function middleware(request: NextRequest) {
   const imageRegex = /\.(svg|png|jpeg|jpg|ico)$/i;
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = locales.some(
